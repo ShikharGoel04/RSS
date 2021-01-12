@@ -6,14 +6,23 @@ import Magazines from './MagazinesComponent';
 import Videos from './VideosComponent';
 import Subscriptions from './SubscriptionsComponent';
 import {Switch, Route , Redirect,withRouter} from 'react-router-dom';
+import { connect } from 'react-redux';
+const mapStateToProps = state => {
+    return {
+      videos: state.videos,
+    }
+  }
 class Main extends Component{
+    constructor(props){
+        super(props);
+    }
     render(){
             return(   
                 <div>
                     <Header />
                     <div>
                     <Switch>
-                    <Route path='/home' component={Home} />
+                    <Route path='/home' component={() => <Home videos={this.props.videos[0]} />} />
                     <Route exact path='/videos' component={Videos} /> 
                     <Route exact path='/magazines' component={Magazines} />
                     <Route exact path='/subscriptions' component={Subscriptions} />
@@ -26,4 +35,4 @@ class Main extends Component{
 }
 }
 
-export default withRouter(Main);
+export default withRouter(connect(mapStateToProps)(Main));

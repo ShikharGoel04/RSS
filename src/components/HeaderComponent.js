@@ -28,21 +28,9 @@ toggleModal() {
                    
                 <Form onSubmit={this.handleLogin}>
                             <FormGroup>
-                                <Label htmlFor="username">Username</Label>
+                                <Label htmlFor="username">Phone Number</Label>
                                 <Input type="text" id="username" name="username"
                                     innerRef={(input) => this.username = input} />
-                            </FormGroup>
-                            <FormGroup>
-                                <Label htmlFor="password">Password</Label>
-                                <Input type="password" id="password" name="password"
-                                    innerRef={(input) => this.password = input}  />
-                            </FormGroup>
-                            <FormGroup check>
-                                <Label check>
-                                    <Input type="checkbox" name="remember"
-                                    innerRef={(input) => this.remember = input}  />
-                                    Remember me
-                                </Label>
                             </FormGroup>
                             <Button type="submit" value="submit" color="primary">Login</Button>
                         </Form>
@@ -53,7 +41,7 @@ toggleModal() {
             <NavbarBrand href="">RSS</NavbarBrand>
           <Nav Navbar>
           <NavItem><NavLink className="nav-link" to="/home"><span className="fa fa-home fa-lg"></span>Home</NavLink></NavItem>
-          <NavItem><NavLink className="nav-link" to="/videos"><span className="fa fa-info fa-lg"></span>Videos</NavLink></NavItem>
+          <NavItem><NavLink className="nav-link" to="/videos"><span className="fa fa-video-camera fa-lg"></span>Videos</NavLink></NavItem>
           <NavItem><NavLink className="nav-link" to="/magazines"><span className="fa fa-info fa-lg"></span>Magazines</NavLink></NavItem>
           <NavItem><NavLink className="nav-link" to="/subscriptions"><span className="fa fa-info fa-lg"></span>Subscriptions</NavLink></NavItem>
           <NavItem>
