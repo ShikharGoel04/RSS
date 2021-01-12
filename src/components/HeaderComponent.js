@@ -13,29 +13,45 @@ class Header extends Component{
         isModalOpen: false
     }
     this.toggleModal = this.toggleModal.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
 }
 toggleModal() {
   this.setState({
     isModalOpen: !this.state.isModalOpen
   });
 }
+
+handleLogin(event) {
+  this.toggleModal();
+  alert("Phone: " + this.phone.value);
+  event.preventDefault();
+
+}
     render(){
             return(
-              <div class="container">
+           
+             
+          
+              
+             <>
+                 <div className="jumbotron text-center">
+              <img src="https://www.organiser.org//Encyc/2019/2/7/organiser-logo.png"></img>
+            </div>
                   <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                 <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
                 <ModalBody>
                    
                 <Form onSubmit={this.handleLogin}>
                             <FormGroup>
-                                <Label htmlFor="username">Phone Number</Label>
-                                <Input type="text" id="username" name="username"
-                                    innerRef={(input) => this.username = input} />
+                                <Label htmlFor="phone">Phone Number</Label>
+                                <Input type="text" id="phone" name="phone"
+                                    innerRef={(input) => this.phone = input} />
                             </FormGroup>
-                            <Button type="submit" value="submit" color="primary">Login</Button>
+                            <Button type="submit" value="submit" color="primary">Send OTP</Button>
                         </Form>
                 </ModalBody>
             </Modal>
+            
                <Navbar dark expand="md">
                              <NavbarToggler onClick={this.toggleNav}/>
             <NavbarBrand href="">RSS</NavbarBrand>
@@ -53,7 +69,7 @@ toggleModal() {
          
       </Navbar>
       
-</div>
+</>
 
             );
 
