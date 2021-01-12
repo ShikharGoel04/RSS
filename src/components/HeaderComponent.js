@@ -29,7 +29,14 @@ handleLogin(event) {
 }
     render(){
             return(
-              <div class="container">
+           
+             
+          
+              
+             <>
+                 <div className="jumbotron text-center">
+              <img src="https://www.organiser.org//Encyc/2019/2/7/organiser-logo.png"></img>
+            </div>
                   <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                 <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
                 <ModalBody>
@@ -44,6 +51,7 @@ handleLogin(event) {
                         </Form>
                 </ModalBody>
             </Modal>
+            
                <Navbar dark expand="md">
                              <NavbarToggler onClick={this.toggleNav}/>
             <NavbarBrand href="">RSS</NavbarBrand>
@@ -61,7 +69,7 @@ handleLogin(event) {
          
       </Navbar>
       
-</div>
+</>
 
             );
 
