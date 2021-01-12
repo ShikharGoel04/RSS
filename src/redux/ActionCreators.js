@@ -15,12 +15,12 @@ var request = {
     body: formData,
 };
 console.log("shikhar");
-return fetch(baseUrl + 'profile/register', request)
-.then(response => response.json())
-    .then(response => dispatch(addOTP(response)));
-  }
+ 
+return fetch(baseUrl + 'feedback', {
+    method: "POST",
+    body: formData,
+})
+}
 
-  export const addOTP = (response) => ({
-    type: ActionTypes.ADD_OTP,
-    payload: response
-});
+
+ 

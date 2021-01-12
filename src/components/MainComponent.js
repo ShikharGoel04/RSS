@@ -7,7 +7,7 @@ import Videos from './VideosComponent';
 import Subscriptions from './SubscriptionsComponent';
 import {Switch, Route , Redirect,withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
-import { sendOTP} from '../redux/ActionCreators';
+import { sendOTP } from '../redux/ActionCreators';
 const mapStateToProps = state => {
     return {
       videos: state.videos,
@@ -27,7 +27,6 @@ class Main extends Component{
             return(   
                 <div>
                     <Header sendOTP={this.props.sendOTP} />
-                    
                     <div>
                     <Switch>
                     <Route path='/home' component={() => <Home videos={this.props.videos[0]} />} />
