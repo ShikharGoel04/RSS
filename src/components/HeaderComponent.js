@@ -5,6 +5,7 @@ import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron,
   Button, Modal, ModalHeader, ModalBody,
   Form, FormGroup, Input, Label } from 'reactstrap';
 import {NavLink} from 'react-router-dom';
+
 class Header extends Component{
 
   constructor(props){
@@ -21,19 +22,23 @@ toggleModal() {
   });
 }
 
-handleLogin(event) {
-  this.toggleModal();
-  alert("Phone: " + this.phone.value);
-  event.preventDefault();
 
+handleLogin(event) {
+  event.preventDefault();
+  alert(this.phone.value);
+  
+  const phone=this.phone.value;
+  
+  this.props.sendOTP(phone);
+ 
+  
 }
+ 
+
     render(){
             return(
-           
-             
-          
               
-             <>
+              <>
                  <div className="jumbotron text-center">
               <img src="https://www.organiser.org//Encyc/2019/2/7/organiser-logo.png"></img>
             </div>
