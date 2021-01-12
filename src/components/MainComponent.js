@@ -7,11 +7,18 @@ import Videos from './VideosComponent';
 import Subscriptions from './SubscriptionsComponent';
 import {Switch, Route , Redirect,withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
+import { sendOTP} from '../redux/ActionCreators';
 const mapStateToProps = state => {
     return {
       videos: state.videos,
     }
   }
+  const mapDispatchToProps = dispatch => {return {
+  
+    sendOTP: (phone) => dispatch(sendOTP(phone))
+  }};
+  
+  
 class Main extends Component{
     constructor(props){
         super(props);
@@ -19,7 +26,8 @@ class Main extends Component{
     render(){
             return(   
                 <div>
-                    <Header />
+                    <Header sendOTP={this.props.sendOTP} />
+                    
                     <div>
                     <Switch>
                     <Route path='/home' component={() => <Home videos={this.props.videos[0]} />} />
@@ -35,4 +43,4 @@ class Main extends Component{
 }
 }
 
-export default withRouter(connect(mapStateToProps)(Main));
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Main));

@@ -1,0 +1,1 @@
+export const baseUrl = 'https://rocky-bayou-35696.herokuapp.com/';
